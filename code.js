@@ -8,6 +8,15 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./cjs/react-jsx-runtime.production.min.js');
+} else {
+  module.exports = require('./cjs/react-jsx-runtime.development.js');
+}
+
+
+
 var VectorWidget = require('./VectorWidget');
 
 var Circle = require('react-art/Circle');
